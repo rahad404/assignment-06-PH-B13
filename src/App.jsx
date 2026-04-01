@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Banner from "./components/Banner"
 import NavBar from "./components/NavBar"
 import StatBar from "./components/StatBar"
@@ -7,6 +8,22 @@ import Footer from "./components/Footer"
 import ProductData from "./components/ProductData"
 
 function App() {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    if (!cart.find(item => item.id === product.id)) {
+      setCart([...cart, product]);
+    }
+  };
+
+  const removeFromCart = (productId) => {
+    setCart(cart.filter(item => item.id !== productId));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
   const data = {
     title: "My App",
     links: [
@@ -17,10 +34,10 @@ function App() {
   }
   return (
     <>
-      <NavBar data={data} />
+      <NavBar cartCount={cart.length} />
       <Banner />
       <StatBar />
-      <ProductData />
+      <ProductData cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
       <GetStarted />
       <Pricing />
       <Footer />

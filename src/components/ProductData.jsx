@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Rocket, Shield, Database, Code, Globe, BarChart3, ShoppingCart, Trash2, CheckCircle2 } from "lucide-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const ProductData = () => {
+const ProductData = ({ cart, addToCart, removeFromCart, clearCart }) => {
    const [activeTab, setActiveTab] = useState('products'); // 'products' or 'cart'
-   const [cart, setCart] = useState([]);
 
    // JsonProduct Data
    const products = [
@@ -75,20 +76,21 @@ const ProductData = () => {
       }
    ];
 
-   // 3. Actions
-   const addToCart = (product) => {
-      if (!cart.find(item => item.id === product.id)) {
-         setCart([...cart, product]);
-      }
+   // 3. Actions (wrapper functions to add toast notifications)
+   const handleAddToCart = (product) => {
+      addToCart(product);
+      toast.success(`${product.name} added to cart!`);
    };
 
-   const removeFromCart = (productId) => {
-      setCart(cart.filter(item => item.id !== productId));
+   const handleRemoveFromCart = (productId) => {
+      const product = cart.find(item => item.id === productId);
+      removeFromCart(productId);
+      toast.success(`${product.name} removed from cart!`);
    };
 
-   const clearCart = () => {
-      setCart([]);
-      alert("Checkout Successful!");
+   const handleCheckout = () => {
+      clearCart();
+      toast.success("Checkout successful!");
    };
 
    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
@@ -163,7 +165,7 @@ const ProductData = () => {
                         </ul>
 
                         {/* Button */}
-                        <button onClick={() => addToCart(product)}
+                        <button onClick={() => handleAddToCart(product)}
                            className="w-full py-4 bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold rounded-2xl transition-colors shadow-lg shadow-indigo-100"
                         >
                            Buy Now
@@ -200,7 +202,7 @@ const ProductData = () => {
                                     <p className="text-slate-500 text-sm">${item.price}</p>
                                  </div>
                               </div>
-                              <button onClick={() => removeFromCart(item.id)}
+                              <button onClick={() => handleRemoveFromCart(item.id)}
                                  className="p-2 text-rose-500 hover:bg-rose-50 rounded-lg transition-colors flex items-center gap-1 text-sm font-bold">
                                  Remove
                               </button>
@@ -214,7 +216,7 @@ const ProductData = () => {
                               <span className="text-3xl font-bold text-slate-900">${totalPrice}</span>
                            </div>
                            <button
-                              onClick={clearCart}
+                              onClick={handleCheckout}
                               className="w-full py-5 bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold rounded-full transition-all shadow-xl shadow-indigo-100"
                            >
                               Proceed To Checkout
@@ -225,6 +227,7 @@ const ProductData = () => {
                </div>
             )}
          </div>
+         <ToastContainer />
       </div>
    );
 };

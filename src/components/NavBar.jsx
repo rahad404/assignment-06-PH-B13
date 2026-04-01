@@ -1,5 +1,6 @@
-const NavBar = () => {
-   let cartCount = 3; // Example cart count, you can replace this with actual state or props
+import { ShoppingCart } from 'lucide-react';
+
+const NavBar = ({ cartCount = 0 }) => {
    return (
       <div className="navbar max-w-[1300px] mx-auto">
          <div className="navbar-start">
@@ -28,6 +29,12 @@ const NavBar = () => {
             </ul>
          </div>
          <div className="navbar-end gap-5">
+            <div className="indicator">
+               <span className="indicator-item badge badge-primary">{cartCount}</span>
+               <button className="btn btn-ghost btn-circle">
+                  <ShoppingCart size={24} />
+               </button>
+            </div>
             <a className="btn bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-white">Get Started</a>
          </div>
       </div>
