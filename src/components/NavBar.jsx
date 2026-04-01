@@ -1,7 +1,7 @@
 const NavBar = () => {
    let cartCount = 3; // Example cart count, you can replace this with actual state or props
    return (
-      <div className="navbar">
+      <div className="navbar max-w-[1300px] mx-auto">
          <div className="navbar-start">
             <div className="flex items-center gap-1 font-bold text-3xl
         bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">

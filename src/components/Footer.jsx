@@ -20,7 +20,6 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
           
-          {/* Logo and Brand Info */}
           <div className="lg:col-span-2 space-y-6">
             <h2 className="text-3xl font-bold text-white tracking-tight">DigiTools</h2>
             <p className="max-w-xs leading-relaxed text-sm lg:text-base">
@@ -29,7 +28,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title} className="space-y-4">
               <h3 className="text-white font-semibold text-lg">{title}</h3>
@@ -45,7 +43,6 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Social Links */}
           <div className="space-y-4">
             <h3 className="text-white font-semibold text-lg">Social Links</h3>
             <div className="flex gap-3">
@@ -63,7 +60,6 @@ const Footer = () => {
 
           </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm">
           <p>© 2026 Digitools. All rights reserved.</p>
           <div className="flex gap-8">

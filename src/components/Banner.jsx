@@ -3,8 +3,8 @@ import { Play } from 'lucide-react';
 
 const Banner = () => {
    return (
-      <section className="bg-white min-h-[600px] flex items-center justify-center p-8 md:p-16">
-         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="bg-white min-h-[540px] mx-auto flex items-center justify-center p-6 md:p-12">
+         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
             <div className="space-y-6">
                {/* Badge */}
@@ -44,7 +44,7 @@ const Banner = () => {
 
             {/* Banner image side */}
             <div className="relative flex justify-center items-center">
-               <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden shadow-2xl">
+               <div className="relative w-full max-w-lg aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <img
                      src={BannerImage}
                      alt="Person interacting with digital interface"

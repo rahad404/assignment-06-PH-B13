@@ -4,6 +4,7 @@ import StatBar from "./components/StatBar"
 import GetStarted from "./components/GetStarted"
 import Pricing from "./components/Pricing"
 import Footer from "./components/Footer"
+import ProductData from "./components/ProductData"
 
 function App() {
   const data = {
@@ -19,7 +20,7 @@ function App() {
       <NavBar data={data} />
       <Banner />
       <StatBar />
-
+      <ProductData />
       <GetStarted />
       <Pricing />
       <Footer />
