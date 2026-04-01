@@ -30,7 +30,7 @@ const NavBar = ({ cartCount = 0 }) => {
          </div>
          <div className="navbar-end gap-5">
             <div className="indicator">
-               <span className="indicator-item badge badge-primary">{cartCount}</span>
+               <span className="indicator-item text-white font-bold badge badge-error">{cartCount}</span>
                <button className="btn btn-ghost btn-circle">
                   <ShoppingCart size={24} />
                </button>

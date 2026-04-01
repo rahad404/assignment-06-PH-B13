@@ -6,6 +6,7 @@ import GetStarted from "./components/GetStarted"
 import Pricing from "./components/Pricing"
 import Footer from "./components/Footer"
 import ProductData from "./components/ProductData"
+import Transform from './components/Transform';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -40,6 +41,7 @@ function App() {
       <ProductData cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} />
       <GetStarted />
       <Pricing />
+      <Transform />
       <Footer />
     </>
   )
