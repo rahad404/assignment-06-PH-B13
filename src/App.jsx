@@ -1,5 +1,6 @@
 import Banner from "./components/Banner"
 import NavBar from "./components/NavBar"
+import StatBar from "./components/StatBar"
 
 function App() {
   const data = {
@@ -14,6 +15,7 @@ function App() {
     <>
       <NavBar data={data}/>
       <Banner />
+      <StatBar />
     </>
   )
 }
