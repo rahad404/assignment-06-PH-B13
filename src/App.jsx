@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar"
 import StatBar from "./components/StatBar"
 import GetStarted from "./components/GetStarted"
 import Pricing from "./components/Pricing"
+import Footer from "./components/Footer"
 
 function App() {
   const data = {
@@ -21,6 +22,7 @@ function App() {
 
       <GetStarted />
       <Pricing />
+      <Footer />
     </>
   )
 }
