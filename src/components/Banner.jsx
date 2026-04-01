@@ -1,11 +1,11 @@
 import BannerImage from "../assets/banner.png";
+import { Play } from 'lucide-react';
 
 const Banner = () => {
   return (
     <section className="bg-white min-h-[600px] flex items-center justify-center p-8 md:p-16">
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         
-        {/* Left Content Side */}
         <div className="space-y-6">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100">
@@ -36,7 +36,7 @@ const Banner = () => {
             </button>
             
             <button className="px-8 py-4 bg-white border-2 border-indigo-500 text-indigo-600 font-semibold rounded-full flex items-center gap-2 hover:bg-indigo-50 transition-all">
-              {/* <Play size={20} fill="currentColor" /> */}
+              <Play size={20} fill="currentColor" />
               Watch Demo
             </button>
           </div>
